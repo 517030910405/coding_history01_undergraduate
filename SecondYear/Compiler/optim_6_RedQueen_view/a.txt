@@ -1,0 +1,261 @@
+f1
+f1
+f2
+dfs1
+dfs2
+
+dfs3
+view1
+MxLang 
+    function c int 0 int 0 int 0
+    function main int 0
+    function fib int 0 int 0
+view2
+-MxLang
+fib-function
+-if
+c-function
+-if
+main-function
+-for
+-for
+-for
+dfs4
+view3
+MxLang 
+ (function getInt 0)(function print 0)(function println 0)(class void 0)(function c 0)(class bool 0)(class string 0)(function toString 0)(function main 0)(function getString 0)(class int 0)(function fib 0)
+    function c int 0 int 0 int 0
+     (int x 0)(int y 0)
+        input_variable 
+        input_variable 
+    function main int 0
+     
+    function fib int 0 int 0
+     (int x 0)
+        input_variable 
+view4
+MxLang 
+ (function getInt 0)(function print 0)(function println 0)(class void 0)(function c 0)(class bool 0)(class string 0)(function toString 0)(function main 0)(function getString 0)(class int 0)(function fib 0)
+    function fib int 0 int 0
+     (int x 0)
+        if 
+         
+    function c int 0 int 0 int 0
+     (int x 0)(int y 0)
+        if 
+         
+    function main int 0
+     
+        for 
+         (int f1 0)
+        for 
+         (int f1 0)
+            for 
+             (int f2 0)
+dfs5
+MxLang  1
+function fib 2
+type int 2
+input_variable  2
+type int 2
+statements  2
+if  3
+expression <= 3
+atom x 3
+atom 1 3
+return  3
+atom 1 3
+return  2
+expression + 2
+expression function 2
+expression - 2
+atom x 2
+atom 1 2
+expression function 2
+expression - 2
+atom x 2
+atom 2 2
+function c 2
+type int 2
+input_variable  2
+type int 2
+input_variable  2
+type int 2
+statements  2
+if  3
+expression || 3
+expression == 3
+atom x 3
+atom 0 3
+expression == 3
+atom y 3
+atom 0 3
+return  3
+atom 1 3
+return  2
+expression + 2
+expression function 2
+expression - 2
+atom x 2
+atom 1 2
+atom y 2
+expression function 2
+atom x 2
+expression - 2
+atom y 2
+atom 1 2
+function main 2
+type int 2
+statements  2
+for  3
+variable  3
+type int 3
+atom 0 3
+expression < 3
+atom f1 3
+atom 10 3
+expression ++ 3
+atom f1 3
+statements  3
+expression function 3
+expression function 3
+expression function 3
+atom f1 3
+expression function 2
+atom "NoNo" 2
+for  3
+variable  3
+type int 3
+atom 0 3
+expression < 3
+atom f1 3
+atom 1000 3
+expression ++ 3
+atom f1 3
+statements  3
+for  4
+variable  4
+type int 4
+atom 0 4
+expression <= 4
+atom f2 4
+atom f1 4
+expression ++ 4
+atom f2 4
+statements  4
+expression function 4
+expression + 4
+expression function 4
+expression function 4
+expression - 4
+atom f1 4
+atom f2 4
+atom f2 4
+atom " " 4
+expression function 3
+atom "" 3
+1 
+1 is valid
+2 
+2 is valid
+{1=0}
+{2=1}
+
+0		
+Func,	Init..init,	(Val||2)
+1		Return,	(Val||0)
+
+0		
+Func,	fib,	(Val||3)
+1		pop_function,	,	(Var|x|1),	(Val||0),	(None)	
+2		<=,	lr,	(Reg||1),	(Var|x|1),	(Val||1),	
+3		BZ,	,	(Tag||1),	(Reg||1),	(None)	
+4		Return,	(Val||1)
+5		Tag,	1
+6		-,	lr,	(Reg||2),	(Var|x|1),	(Val||1),	
+7		push_function,	,	(Val||0),	(Reg||2),	(None)	
+8		call,	,	(None)	(Func|fib|-1),	(Val||1),	
+9		=,	lr,	(Reg||3),	(Reg|Return|-1),	(None)	
+10		-,	lr,	(Reg||4),	(Var|x|1),	(Val||2),	
+11		push_function,	,	(Val||0),	(Reg||4),	(None)	
+12		call,	,	(None)	(Func|fib|-1),	(Val||1),	
+13		=,	lr,	(Reg||5),	(Reg|Return|-1),	(None)	
+14		+,	lr,	(Reg||6),	(Reg||3),	(Reg||5),	
+15		Return,	(Reg||6)
+16		Return,	(Val||0)
+
+0		
+Func,	c,	(Val||4)
+1		pop_function,	,	(Var|x|1),	(Val||0),	(None)	
+2		pop_function,	,	(Var|y|1),	(Val||1),	(None)	
+3		==,	lr,	(Reg||7),	(Var|x|1),	(Val||0),	
+4		BNZ,	,	(Tag||3),	(Reg||7),	(None)	
+5		==,	lr,	(Reg||8),	(Var|y|1),	(Val||0),	
+6		Tag,	3
+7		||,	lr,	(Reg||9),	(Reg||7),	(Reg||8),	
+8		BZ,	,	(Tag||2),	(Reg||9),	(None)	
+9		Return,	(Val||1)
+10		Tag,	2
+11		-,	lr,	(Reg||10),	(Var|x|1),	(Val||1),	
+12		push_function,	,	(Val||1),	(Var|y|1),	(None)	
+13		push_function,	,	(Val||0),	(Reg||10),	(None)	
+14		call,	,	(None)	(Func|c|-1),	(Val||2),	
+15		=,	lr,	(Reg||11),	(Reg|Return|-1),	(None)	
+16		-,	lr,	(Reg||12),	(Var|y|1),	(Val||1),	
+17		push_function,	,	(Val||1),	(Reg||12),	(None)	
+18		push_function,	,	(Val||0),	(Var|x|1),	(None)	
+19		call,	,	(None)	(Func|c|-1),	(Val||2),	
+20		=,	lr,	(Reg||13),	(Reg|Return|-1),	(None)	
+21		+,	lr,	(Reg||14),	(Reg||11),	(Reg||13),	
+22		Return,	(Reg||14)
+23		Return,	(Val||0)
+
+0		
+Func,	main,	(Val||2)
+1		call,	,	(None)	(Func|Init..init|-1),	(Val||0),	
+2		=,	lr,	(Var|f1|2),	(Val||0),	(None)	
+3		<,	lr,	(Reg||15),	(Var|f1|2),	(Val||10),	
+4		BZ,	,	(Tag||5),	(Reg||15),	(None)	
+5		Tag,	4
+6		push_function,	,	(Val||0),	(Var|f1|2),	(None)	
+7		call,	,	(None)	(Func|fib|-1),	(Val||1),	
+8		=,	lr,	(Reg||16),	(Reg|Return|-1),	(None)	
+9		toString,	,	(Reg||17),	(Reg||16),	(None)	
+10		println,	,	(None)	(Reg||17),	(None)	
+11		Tag,	6
+12		++,	r,	(Var|f1|2),	(Var|f1|2),	(None)	
+13		<,	lr,	(Reg||18),	(Var|f1|2),	(Val||10),	
+14		BNZ,	,	(Tag||4),	(Reg||18),	(None)	
+15		Tag,	5
+16		println,	,	(None)	(Val||0|"NoNo"),	(None)	
+17		=,	lr,	(Var|f1|2),	(Val||0),	(None)	
+18		<,	lr,	(Reg||19),	(Var|f1|2),	(Val||1000),	
+19		BZ,	,	(Tag||8),	(Reg||19),	(None)	
+20		Tag,	7
+21		=,	lr,	(Var|f2|3),	(Val||0),	(None)	
+22		<=,	lr,	(Reg||20),	(Var|f2|3),	(Var|f1|2),	
+23		BZ,	,	(Tag||11),	(Reg||20),	(None)	
+24		Tag,	10
+25		-,	lr,	(Reg||21),	(Var|f1|2),	(Var|f2|3),	
+26		push_function,	,	(Val||1),	(Var|f2|3),	(None)	
+27		push_function,	,	(Val||0),	(Reg||21),	(None)	
+28		call,	,	(None)	(Func|c|-1),	(Val||2),	
+29		=,	lr,	(Reg||22),	(Reg|Return|-1),	(None)	
+30		toString,	,	(Reg||23),	(Reg||22),	(None)	
+31		string_+,	lr,	(Reg||24),	(Reg||23),	(Val||1|" "),	
+32		print,	,	(None)	(Reg||24),	(None)	
+33		Tag,	12
+34		++,	r,	(Var|f2|3),	(Var|f2|3),	(None)	
+35		<=,	lr,	(Reg||25),	(Var|f2|3),	(Var|f1|2),	
+36		BNZ,	,	(Tag||10),	(Reg||25),	(None)	
+37		Tag,	11
+38		println,	,	(None)	(Val||2|""),	(None)	
+39		Tag,	9
+40		++,	r,	(Var|f1|2),	(Var|f1|2),	(None)	
+41		<,	lr,	(Reg||26),	(Var|f1|2),	(Val||1000),	
+42		BNZ,	,	(Tag||7),	(Reg||26),	(None)	
+43		Tag,	8
+44		Return,	(Val||0)
+{1=0}
+{2=1}
+result_all.asm:39: error: interminable macro recursion

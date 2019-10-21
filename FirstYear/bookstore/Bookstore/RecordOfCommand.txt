@@ -1,0 +1,20 @@
+Opened By root
+
+useradd 1 1 1 1
+
+Opened By root
+
+su 1 1
+
+su 2 2
+
+report 
+
+exit 
+
+Opened By root
+
+help 
+
+exit 
+

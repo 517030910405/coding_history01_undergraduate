@@ -1,0 +1,5 @@
+line 697жа
+Windows 
+if (str.length()>1)str=str.substr(1,str.length()-2);
+Linux
+if (str.length()>1)str=str.substr(1,str.length()-1);

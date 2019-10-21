@@ -1,0 +1,6 @@
+su 2 2
+
+report 
+
+exit 
+

@@ -1,0 +1,319 @@
+Windows PowerShell
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+PS C:\WINDOWS\system32> ubuntu1804.exe
+lijiasen0921@DESKTOP-M37PS9K:~$ ls /dev/
+block       ttyS1    ttyS114  ttyS13   ttyS145  ttyS160  ttyS176  ttyS191  ttyS34  ttyS5   ttyS65  ttyS80  ttyS96
+fd          ttyS10   ttyS115  ttyS130  ttyS146  ttyS161  ttyS177  ttyS2    ttyS35  ttyS50  ttyS66  ttyS81  ttyS97
+kmsg        ttyS100  ttyS116  ttyS131  ttyS147  ttyS162  ttyS178  ttyS20   ttyS36  ttyS51  ttyS67  ttyS82  ttyS98
+lxss        ttyS101  ttyS117  ttyS132  ttyS148  ttyS163  ttyS179  ttyS21   ttyS37  ttyS52  ttyS68  ttyS83  ttyS99
+lxssclient  ttyS102  ttyS118  ttyS133  ttyS149  ttyS164  ttyS18   ttyS22   ttyS38  ttyS53  ttyS69  ttyS84  urandom
+null        ttyS103  ttyS119  ttyS134  ttyS15   ttyS165  ttyS180  ttyS23   ttyS39  ttyS54  ttyS7   ttyS85  zero
+ptmx        ttyS104  ttyS12   ttyS135  ttyS150  ttyS166  ttyS181  ttyS24   ttyS4   ttyS55  ttyS70  ttyS86
+pts         ttyS105  ttyS120  ttyS136  ttyS151  ttyS167  ttyS182  ttyS25   ttyS40  ttyS56  ttyS71  ttyS87
+random      ttyS106  ttyS121  ttyS137  ttyS152  ttyS168  ttyS183  ttyS26   ttyS41  ttyS57  ttyS72  ttyS88
+shm         ttyS107  ttyS122  ttyS138  ttyS153  ttyS169  ttyS184  ttyS27   ttyS42  ttyS58  ttyS73  ttyS89
+stderr      ttyS108  ttyS123  ttyS139  ttyS154  ttyS17   ttyS185  ttyS28   ttyS43  ttyS59  ttyS74  ttyS9
+stdin       ttyS109  ttyS124  ttyS14   ttyS155  ttyS170  ttyS186  ttyS29   ttyS44  ttyS6   ttyS75  ttyS90
+stdout      ttyS11   ttyS125  ttyS140  ttyS156  ttyS171  ttyS187  ttyS3    ttyS45  ttyS60  ttyS76  ttyS91
+tty         ttyS110  ttyS126  ttyS141  ttyS157  ttyS172  ttyS188  ttyS30   ttyS46  ttyS61  ttyS77  ttyS92
+tty0        ttyS111  ttyS127  ttyS142  ttyS158  ttyS173  ttyS189  ttyS31   ttyS47  ttyS62  ttyS78  ttyS93
+tty1        ttyS112  ttyS128  ttyS143  ttyS159  ttyS174  ttyS19   ttyS32   ttyS48  ttyS63  ttyS79  ttyS94
+ttyS0       ttyS113  ttyS129  ttyS144  ttyS16   ttyS175  ttyS190  ttyS33   ttyS49  ttyS64  ttyS8   ttyS95
+lijiasen0921@DESKTOP-M37PS9K:~$ cat /dev/ttyS5
+cat: /dev/ttyS5: Permission denied
+lijiasen0921@DESKTOP-M37PS9K:~$ cat /dev/ttyS6
+cat: /dev/ttyS6: Permission denied
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo chmod 755 /dev/ttyS5
+[sudo] password for lijiasen0921:
+lijiasen0921@DESKTOP-M37PS9K:~$ chmod 755 /dev/ttyS5
+chmod: changing permissions of '/dev/ttyS5': Operation not permitted
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo chmod 755 /dev/ttyS5
+[sudo] password for lijiasen0921:
+lijiasen0921@DESKTOP-M37PS9K:~$ cat /dev/ttyS5
+^C
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo chmod 755 /dev/ttyS6
+lijiasen0921@DESKTOP-M37PS9K:~$ cat /dev/ttyS6
+^C
+lijiasen0921@DESKTOP-M37PS9K:~$ cat /dev/urandom > /dev/ttyS5
+-bash: /dev/ttyS5: Permission denied
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo cat /dev/urandom > /dev/ttyS5
+-bash: /dev/ttyS5: Permission denied
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo cat /dev/urandom > /dev/ttyS6
+-bash: /dev/ttyS6: Permission denied
+lijiasen0921@DESKTOP-M37PS9K:~$ ls -la /dev/ttyS6
+crwxr-xr-x 1 root root 4, 70 Dec 24 22:05 /dev/ttyS6
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo chmod 777 /dev/ttyS6
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo chmod 777 /dev/ttyS5
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo cat /dev/urandom > /dev/ttyS5
+^C
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo cat /dev/urandom > /dev/ttyS6
+^C
+lijiasen0921@DESKTOP-M37PS9K:~$ sudo cat /dev/ttyS6
+^C
+lijiasen0921@DESKTOP-M37PS9K:~$ ls
+lijiasen0921@DESKTOP-M37PS9K:~$ ls
+lijiasen0921@DESKTOP-M37PS9K:~$ ls
+lijiasen0921@DESKTOP-M37PS9K:~$ git clone
+fatal: You must specify a repository to clone.
+
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    -j, --jobs <n>        number of submodules cloned in parallel
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --reference-if-able <repo>
+                          reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --shallow-since <time>
+                          create a shallow clone since a specific time
+    --shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --single-branch       clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --shallow-submodules  any cloned submodules will be shallow
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --filter <args>       object filtering
+
+lijiasen0921@DESKTOP-M37PS9K:~$ git clone -r https://github.com/CreeperLin/Arch2018
+error: unknown switch `r'
+usage: git clone [<options>] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recurse-submodules[=<pathspec>]
+                          initialize submodules in the clone
+    -j, --jobs <n>        number of submodules cloned in parallel
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    --reference-if-able <repo>
+                          reference repository
+    --dissociate          use --reference only while cloning
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --shallow-since <time>
+                          create a shallow clone since a specific time
+    --shallow-exclude <revision>
+                          deepen history of shallow clone, excluding rev
+    --single-branch       clone only one branch, HEAD or --branch
+    --no-tags             don't clone any tags, and make later fetches not to follow them
+    --shallow-submodules  any cloned submodules will be shallow
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+    --filter <args>       object filtering
+
+lijiasen0921@DESKTOP-M37PS9K:~$ git clone --recursive https://github.com/CreeperLin/Arch2018
+Cloning into 'Arch2018'...
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 171 (delta 0), reused 2 (delta 0), pack-reused 166
+Receiving objects: 100% (171/171), 434.58 KiB | 32.00 KiB/s, done.
+Resolving deltas: 100% (49/49), done.
+Checking out files: 100% (83/83), done.
+Submodule 'serial' (https://github.com/wjwwood/serial.git) registered for path 'serial'
+Cloning into '/home/lijiasen0921/Arch2018/serial'...
+remote: Enumerating objects: 2652, done.
+remote: Total 2652 (delta 0), reused 0 (delta 0), pack-reused 2652
+Receiving objects: 100% (2652/2652), 1.55 MiB | 129.00 KiB/s, done.
+Resolving deltas: 100% (1237/1237), done.
+Submodule path 'serial': checked out '5a354eaab7c064a155857d377a2fa3f0f8390c34'
+lijiasen0921@DESKTOP-M37PS9K:~$ l
+Arch2018/
+lijiasen0921@DESKTOP-M37PS9K:~$ cd Arch2018/
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018$ ls
+README.md  adder  manual.pdf  riscv  serial
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018$ cd serial
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/serial$ cmake .
+-- The C compiler identification is GNU 7.3.0
+-- The CXX compiler identification is GNU 7.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CATKIN_DEVEL_PREFIX: /home/lijiasen0921/Arch2018/serial/devel
+-- Using CMAKE_PREFIX_PATH:
+-- Found PythonInterp: /usr/bin/python (found version "2.7.15")
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/lijiasen0921/Arch2018/serial/test_results
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- nosetests not found, Python tests can not be run (try installing package 'python-nose')
+-- catkin 0.7.8
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/lijiasen0921/Arch2018/serial
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/serial$ make
+Scanning dependencies of target serial
+[ 16%] Building CXX object CMakeFiles/serial.dir/src/serial.cc.o
+[ 33%] Building CXX object CMakeFiles/serial.dir/src/impl/unix.cc.o
+[ 50%] Building CXX object CMakeFiles/serial.dir/src/impl/list_ports/list_ports_linux.cc.o
+[ 66%] Linking CXX shared library devel/lib/libserial.so
+[ 66%] Built target serial
+Scanning dependencies of target serial_example
+[ 83%] Building CXX object CMakeFiles/serial_example.dir/examples/serial_example.cc.o
+[100%] Linking CXX executable devel/lib/serial/serial_example
+[100%] Built target serial_example
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/serial$ make install
+[ 66%] Built target serial
+[100%] Built target serial_example
+Install the project...
+-- Install configuration: ""
+CMake Error at cmake_install.cmake:46 (file):
+  file failed to open for writing (Permission denied):
+
+    /usr/local/.catkin
+
+
+Makefile:73: recipe for target 'install' failed
+make: *** [install] Error 1
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/serial$ sudo make install
+[ 66%] Built target serial
+[100%] Built target serial_example
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/_setup_util.py
+-- Installing: /usr/local/env.sh
+-- Installing: /usr/local/setup.bash
+-- Installing: /usr/local/setup.sh
+-- Installing: /usr/local/setup.zsh
+-- Installing: /usr/local/.rosinstall
+-- Installing: /usr/local/lib/pkgconfig/serial.pc
+-- Installing: /usr/local/share/serial/cmake/serialConfig.cmake
+-- Installing: /usr/local/share/serial/cmake/serialConfig-version.cmake
+-- Installing: /usr/local/share/serial/package.xml
+-- Installing: /usr/local/lib/libserial.so
+-- Installing: /usr/local/include/serial/serial.h
+-- Installing: /usr/local/include/serial/v8stdint.h
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/serial$ cd ..
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018$ l
+README.md  adder/  manual.pdf  riscv/  serial/
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018$ cd riscv
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ l
+build_test.sh  ctrl/  run_test.sh  run_test_fpga.sh  sim/  src/  sys/  testcase/
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ ./build_test.sh
+-bash: ./build_test.sh: Permission denied
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ chmod +x ./build_test.sh
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ chmod +x ./run_test_fpga.sh
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ cd ctrl
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv/ctrl$ l
+build.sh  controller.cpp  listener.h  run.sh
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv/ctrl$ chmod +x *.sh
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv/ctrl$ ./build.sh
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv/ctrl$ ./run.sh
+usage: path-to-ram [path-to-input] com-port -I(interactive)/-T(testing)
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv/ctrl$ ..
+..: command not found
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv/ctrl$ cd ..
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ l
+build_test.sh*  ctrl/  run_test.sh  run_test_fpga.sh*  sim/  src/  sys/  testcase/
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ vi ./run_test_fpga.sh
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ nano ./run_test_fpga.sh
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ ./run_test_fpga.sh
+cp: cannot stat './testcase/.c': No such file or directory
+failed to read ram file
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ ./run_test_fpga.sh pi
+RAM size: 130c
+13 06 05 00 13 05 00 00 93 f6 15 00 63 84 06 00
+33 05 c5 00 93 d5 15 00 13 16 16 00 e3 96 05 fe
+67 80 00 00 63 40 05 06 63 c6 05 06 13 86 05 00
+93 05 05 00 13 05 f0 ff 63 0c 06 02 93 06 10 00
+input file not found, skipping
+initialized UART port on: /dev/ttyS6
+55 41 52 54
+00 00 00 00
+UART assertion failed
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ ./run_test_fpga.sh pi
+RAM size: 130c
+13 06 05 00 13 05 00 00 93 f6 15 00 63 84 06 00
+33 05 c5 00 93 d5 15 00 13 16 16 00 e3 96 05 fe
+67 80 00 00 63 40 05 06 63 c6 05 06 13 86 05 00
+93 05 05 00 13 05 f0 ff 63 0c 06 02 93 06 10 00
+input file not found, skipping
+initialized UART port on: /dev/ttyS6
+55 41 52 54
+00 00 00 00
+UART assertion failed
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$ ./run_test_fpga.sh pi
+RAM size: 130c
+13 06 05 00 13 05 00 00 93 f6 15 00 63 84 06 00
+33 05 c5 00 93 d5 15 00 13 16 16 00 e3 96 05 fe
+67 80 00 00 63 40 05 06 63 c6 05 06 13 86 05 00
+93 05 05 00 13 05 f0 ff 63 0c 06 02 93 06 10 00
+input file not found, skipping
+initialized UART port on: /dev/ttyS6
+55 41 52 54
+55 41 52 54
+uploading RAM: 130c blks:5
+blk:0 ofs:0000
+blk:1 ofs:0400
+blk:2 ofs:0800
+blk:3 ofs:0c00
+blk:4 ofs:1000
+RAM uploaded
+Enter r to run, q to quit, p to get cpu PC(demo)
+r
+CPU start
+3141592653589793238462643383279528841971693993751058209749445923078164062862089986280348253421170679821480865132823664709384469555822317253594081284811174502841270193852115559644622948954930381964428810975665933446128475648233786783165271201991456485669234634861045432664821339360726024914127372458706606315588174881520920962829254917153643678925903611330530548820466521384146951941511609433057273657595919530921861173819326117931051185480744623799627495673518857527248912279381830119491298336733624406566438602139494639522473719070217986943702770539217176293176752384674818467669451320005681271452635608277857713427577896091736371787214684409012249534301465495853710579227968925892354201995611212902196864344181598136297747713099605187072113499999983729780499510597317328160963185
+
+CPU returned with running time: 4.718750
+lijiasen0921@DESKTOP-M37PS9K:~/Arch2018/riscv$

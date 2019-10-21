@@ -1,0 +1,1 @@
+print(["F"+str(it+1) for it in range(24)])

@@ -1,0 +1,21 @@
+4
+123
+su ndnd zzzz
+su root nand
+su root sjtu
+su lijiasen 1313
+su lijiasen
+su root 1313
+su root
+useradd lilili hahah 7 sfsfsf
+useradd lilili hahah 1 sfsfsf
+logout
+logout
+su root sjtu
+delete lilili
+useradd lilili hahah 1 sfsfsf
+logout
+passwd root sjtu sjtusjtu
+su root sjtu
+su root sjtusjtu
+exit

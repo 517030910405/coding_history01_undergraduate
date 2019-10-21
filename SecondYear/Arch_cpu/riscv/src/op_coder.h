@@ -1,0 +1,14 @@
+`define alu_op_width 5
+`define alu_none	0
+`define alu_add		1
+`define alu_addu	2
+`define alu_sub		3
+`define alu_subu	4
+`define alu_mul_l	5
+`define alu_mul_lu	6
+`define alu_mul_h	7
+`define alu_mul_hu	8
+`define alu_div 	9
+`define alu_mod 	10
+`define alu_divu 	11
+`define alu_modu 	12
